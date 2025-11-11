@@ -99,7 +99,7 @@ var findMedianSortedArrays = function(nums1, nums2) {
         return Math.max(Aleft, Bleft);
       }
       return (Math.max(Aleft, Bleft) + Math.min(Aright, Bright)) / 2;
-     // 第一组左半最大 > 第二组右半最小,说明左半有点大往回退
+     // 第一组左半最大 > 第二组右半最小,说明第一组左半有点大往回退
     } else if(Aleft > Bright){
       right = i - 1
     } else {
