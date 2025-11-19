@@ -47,13 +47,13 @@ var reverse = function(x) {
   return result;
 };
 
-// 最优解
+// 最优解 时间复杂度O(n) 空间复杂度O(1)
 var reverse = function(x) {
   // 使用更准确常量
   const MIN = Math.pow(-2, 31) //  -2147483648
-  const MAX_LAST_DIGIT = MAX % 10;  // 7
-  const MAX = Math.pow(2, 31) - 1 // 2147483647
   const MIN_LAST_DIGIT = MIN % 10;  // -8 (注意：-2147483648 % 10 = -8)
+  const MAX = Math.pow(2, 31) - 1 // 2147483647
+  const MAX_LAST_DIGIT = MAX % 10;  // 7
 
   let result = 0
 
