@@ -21,6 +21,7 @@
 // };
 
 var twoSum = function(nums, target) {
+  console.log(1);
   const tempMap = new Map();
   for (let i = 0; i < nums.length; i++){
     const currNum = nums[i];
@@ -33,5 +34,6 @@ var twoSum = function(nums, target) {
     }
   }
 }
+
 // @lc code=end
 

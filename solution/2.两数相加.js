@@ -49,7 +49,7 @@ var addTwoNumbers = function (l1, l2) {
   let tail = dummy;
   let carry = 0;
   while(p !== null || q !== null || carry){
-    const p1 = p ? p.val : 0
+    const p1 = p ? p.val : 0 
     const p2 = q ? q.val : 0
     const sum = p1 + p2 + carry
     const val = sum % 10;
