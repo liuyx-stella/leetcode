@@ -38,6 +38,7 @@
 //     return result.length > 0 ? result[0] : []
 // };
 
+// 记录窗口内有效数字
 var minWindow = function(s, t){
   // 边界情况处理
   if(!s || !t || s.length < t.length){
@@ -58,27 +59,34 @@ var minWindow = function(s, t){
   let len = Infinity // 最小窗口的长度
   const window = new Map() // 窗口中目标字符的计数
 
+  // 3. 滑动窗口主循环
   while (right < s.length) {
+    // 扩大窗口：右指针向右移动
     const c = s[right];
     right++;
 
+    // 更新窗口数据
     if(need.has(c)) {
       window.set(c, (window.get(c) || 0) + 1)
-
+      // 当窗口中该字符的数量达到需要时，valid++
       if(window.get(c) === need.get(c)) {
         valid++
       }
     }
 
+    // 4. 收缩窗口：当窗口满足条件时，尝试缩小窗口
     while (valid === need.size) {
+      // 更新最小窗口
       if(right - left < len){
         start = left
         len = right - left
       }
       const d = s[left]
       left++
-      
+
+      // 缩小窗口：左指针向右移动
       if(need.has(d)) {
+        // 如果之前窗口中该字符的数量刚好等于需要，左指针移动后，窗口中有效字符的种类数valid--
         if(window.get(d) === need.get(d)) {
           valid--;
         }
