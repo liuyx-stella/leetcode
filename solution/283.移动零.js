@@ -40,6 +40,3 @@ var moveZeroes = function(nums) {
   }
 };
 // @lc code=end
-
-
-[1,0,0,3,12]
