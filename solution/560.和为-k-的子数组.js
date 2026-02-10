@@ -39,7 +39,7 @@ var subarraySum = function(nums, k){
   for(let i = 0; i < nums.length; i++){
     preNum += nums[i]
     let target = preNum - k
-    if(prefixNumMap.get(target)){
+    if(prefixNumMap.has(target)){
       count += prefixNumMap.get(target)
     }
     prefixNumMap.set(preNum, (prefixNumMap.get(preNum) || 0) + 1)
